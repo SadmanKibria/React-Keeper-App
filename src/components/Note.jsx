@@ -1,6 +1,7 @@
 import React from "react";
 
 function Note(props) {
+  // Calls the delete function passed via props when button is clicked
   function handleClick() {
     props.onDelete(props.id);
   }

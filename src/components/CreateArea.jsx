@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
 function CreateArea(props) {
+  // State to store note inpu
   const [note, setNote] = useState({
     title: "",
     content: "",
   });
 
+  // Handles input changes and updates the state accordingly
   function handleChange(event) {
     const { name, value } = event.target;
 
@@ -17,6 +19,7 @@ function CreateArea(props) {
     });
   }
 
+  // Handles note submission and calls the onAdd function from props
   function submitNote(event) {
     props.onAdd(note);
     setNote({
@@ -28,7 +31,7 @@ function CreateArea(props) {
 
   return (
     <div>
-      <form>
+      <form className="create-note">
         <input
           name="title"
           onChange={handleChange}
